@@ -6,12 +6,12 @@
 <title>Najad -- Yachts of Sweden</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&family=Forum&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300&display=swap" rel="stylesheet">
 <style>
 :root {
   --red:#80242a; --red-deep:#6A1E23; --near-black:#1E1A17; --brown:#4A3728;
   --stone:#DDD6CC; --stone-light:#EAE4DC; --page:#F6F4F1; --white:#FFFFFF;
-  --warm-mid:#A89E94; --font-display:"Forum",serif; --font-body:"Plus Jakarta Sans",sans-serif;
+  --warm-mid:#A89E94; --font-display:"Plus Jakarta Sans",sans-serif; --font-body:"Plus Jakarta Sans",sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -29,7 +29,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:99997;display:flex;align-items:c
 .hamburger-btn{display:none;background:none;border:none;padding:8px;cursor:pointer;flex-direction:column;gap:6px;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent;}
 .hamburger-btn span{display:block;width:24px;height:1.5px;background:var(--near-black);border-radius:1px;}
 .mobile-nav{position:fixed;top:0;left:0;width:100vw;height:100vh;background:var(--page);z-index:99999;flex-direction:column;align-items:center;justify-content:center;gap:24px;border-top:3px solid var(--red);}
-.mobile-nav a{font-family:var(--font-display);font-size:28px;color:var(--near-black);text-decoration:none;}
+.mobile-nav a{font-family:var(--font-body);font-weight:300;font-size:28px;color:var(--near-black);text-decoration:none;letter-spacing:-0.01em;}
 .mobile-nav .mob-cta{font-size:12px;font-weight:500;letter-spacing:0.1em;color:var(--red);border:1px solid var(--red);padding:12px 32px;margin-top:8px;}
 .hero{height:100vh;min-height:680px;display:grid;grid-template-columns:1fr 1fr;}
 .hero-image{position:relative;overflow:hidden;margin-top:65px;}
@@ -37,7 +37,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:99997;display:flex;align-items:c
 .hero-text{display:flex;flex-direction:column;justify-content:center;padding:100px 60px 60px;background:var(--page);border-left:3px solid var(--red);margin-top:65px;}
 .tag{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--red);margin-bottom:32px;display:flex;align-items:center;gap:12px;}
 .tag::before{content:"";width:20px;height:1px;background:var(--red);flex-shrink:0;}
-.hero-title{font-family:var(--font-display);font-size:clamp(48px,5.5vw,80px);color:var(--near-black);line-height:1.03;letter-spacing:0.02em;margin-bottom:28px;}
+.hero-title{font-family:var(--font-body);font-weight:300;font-size:clamp(40px,4.8vw,68px);color:var(--near-black);line-height:1.05;letter-spacing:-0.01em;margin-bottom:28px;}
 .hero-sub{font-size:15px;font-weight:300;color:var(--brown);line-height:1.9;max-width:360px;margin-bottom:40px;}
 .hero-actions{display:flex;align-items:center;gap:24px;margin-bottom:52px;}
 .btn-red{font-size:12px;font-weight:500;letter-spacing:0.08em;color:var(--white);background:var(--red);padding:13px 26px;text-decoration:none;transition:all 0.25s;}
@@ -48,7 +48,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:99997;display:flex;align-items:c
 .hero-arrow img{width:100%;height:auto;display:block;}
 .section{padding:120px 48px;max-width:1440px;margin:0 auto;}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;}
-.section-headline{font-family:var(--font-display);font-size:clamp(30px,3.2vw,48px);color:var(--near-black);line-height:1.1;letter-spacing:0.02em;margin-bottom:24px;}
+.section-headline{font-family:var(--font-body);font-weight:300;font-size:clamp(28px,3vw,44px);color:var(--near-black);line-height:1.1;letter-spacing:-0.01em;margin-bottom:24px;}
 .section-headline em{color:var(--red);font-style:normal;}
 .body-text{font-size:15px;font-weight:300;color:var(--brown);line-height:1.9;}
 .body-text p+p{margin-top:18px;}
@@ -68,7 +68,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:99997;display:flex;align-items:c
 .mc-ph{position:absolute;inset:0;background:var(--stone);}
 .model-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(30,26,23,0.9) 0%,transparent 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;}
 .mc-family{font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);margin-bottom:6px;}
-.mc-name{font-family:var(--font-display);font-size:24px;color:var(--white);letter-spacing:0.02em;margin-bottom:4px;}
+.mc-name{font-family:var(--font-body);font-weight:300;font-size:24px;color:var(--white);letter-spacing:-0.01em;margin-bottom:4px;}
 .mc-tag{font-size:12px;font-weight:300;color:rgba(246,244,241,0.6);margin-bottom:10px;}
 .mc-specs{display:flex;gap:14px;}
 .mc-spec{font-size:10px;color:rgba(246,244,241,0.45);}
@@ -77,22 +77,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:99997;display:flex;align-items:c
 .numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:1200px;margin:0 auto;}
 .number-item{padding:32px 40px;border-right:1px solid var(--stone-light);text-align:center;}
 .number-item:last-child{border-right:none;}
-.number-val{font-family:var(--font-display);font-size:56px;color:var(--near-black);line-height:1;}
+.number-val{font-family:var(--font-body);font-weight:300;font-size:56px;color:var(--near-black);line-height:1;letter-spacing:-0.02em;}
 .number-unit{font-size:24px;color:var(--red);}
 .number-label{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--warm-mid);margin-top:8px;}
-.phi-quote{font-family:var(--font-display);font-size:clamp(22px,2.5vw,34px);color:var(--near-black);line-height:1.35;letter-spacing:0.02em;border-left:2px solid var(--red);padding-left:24px;margin-bottom:28px;}
+.phi-quote{font-family:var(--font-body);font-weight:300;font-style:italic;font-size:clamp(20px,2.2vw,30px);color:var(--near-black);line-height:1.4;letter-spacing:-0.01em;border-left:2px solid var(--red);padding-left:24px;margin-bottom:28px;}
 .phi-arrow{margin-top:36px;max-width:180px;}
 .phi-arrow img{width:100%;height:auto;}
 .cta-section{background:var(--near-black);padding:100px 48px;}
 .cta-inner{max-width:1344px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;}
-.cta-headline{font-family:var(--font-display);font-size:clamp(32px,3.5vw,52px);color:var(--page);line-height:1.1;letter-spacing:0.02em;}
+.cta-headline{font-family:var(--font-body);font-weight:300;font-size:clamp(32px,3.5vw,52px);color:var(--page);line-height:1.1;letter-spacing:-0.01em;}
 .cta-headline em{color:var(--red);font-style:normal;}
 .cta-sub{font-size:14px;font-weight:300;color:var(--warm-mid);line-height:1.8;max-width:400px;margin-top:14px;}
 .btn-inv{font-size:12px;font-weight:500;letter-spacing:0.08em;color:var(--white);background:var(--red);padding:14px 28px;text-decoration:none;transition:all 0.25s;flex-shrink:0;}
 .btn-inv:hover{background:var(--red-deep);}
 footer{background:var(--near-black);border-top:1px solid rgba(246,244,241,0.06);padding:64px 48px 36px;}
 .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;max-width:1344px;margin:0 auto 48px;}
-.footer-brand{font-family:var(--font-display);font-size:22px;color:var(--page);letter-spacing:0.04em;margin-bottom:12px;}
+.footer-brand{font-family:var(--font-body);font-weight:300;font-size:22px;color:var(--page);letter-spacing:0.02em;margin-bottom:12px;}
 .footer-tagline{font-size:12px;font-weight:300;color:rgba(246,244,241,0.4);line-height:1.7;}
 .footer-col-title{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
@@ -158,12 +158,12 @@ footer{background:var(--near-black);border-top:1px solid rgba(246,244,241,0.06);
 </nav>
 <section class="hero">
   <div class="hero-image">
-    <img src="images/hero/najad-hero-wheel.jpg" alt="Najad craftsmanship">
+    <img src="images/hero/najad-hero-wheel.jpeg" alt="Najad craftsmanship">
   </div>
   <div class="hero-text">
     <div class="tag">Yachts of Sweden -- Since 1971</div>
     <h1 class="hero-title">A Life<br>Well<br>Sailed.</h1>
-    <p class="hero-sub">Swedish yachts of uncompromising quality. Built in Henan for those who seek the finest experience on the water.</p>
+    <p class="hero-sub">Swedish yachts of uncompromising quality. Built in Henån for those who seek the finest experience on the water.</p>
     <div class="hero-actions">
       <a href="yachts.html" class="btn-red">Explore Yachts</a>
       <a href="about.html" class="btn-ghost">Our Story</a>
@@ -178,7 +178,7 @@ footer{background:var(--near-black);border-top:1px solid rgba(246,244,241,0.06);
       <h2 class="section-headline">Built for those<br>who seek<br>the <em>finest.</em></h2>
       <div class="body-text">
         <p>A Najad is not a compromise. It is the result of over 50 years of refining a single idea -- that a sailing yacht should be as comfortable and safe offshore as it is a pleasure to live aboard in harbour.</p>
-        <p>Every boat is built to order in Henan, Orust. The same island, the same hands, the same uncompromising standards that have defined Najad since 1971.</p>
+        <p>Every boat is built to order in Henån, Orust. The same island, the same hands, the same uncompromising standards that have defined Najad since 1971.</p>
       </div>
       <a href="about.html" class="link-arr">About Najad</a>
     </div>
@@ -237,7 +237,7 @@ footer{background:var(--near-black);border-top:1px solid rgba(246,244,241,0.06);
   <div class="footer-grid">
     <div>
       <div class="footer-brand">Najad</div>
-      <p class="footer-tagline">Yachts of Sweden. Built in Henan, Orust since 1971. Part of Najad Group.</p>
+      <p class="footer-tagline">Yachts of Sweden. Built in Henån, Orust since 1971. Part of Najad Group.</p>
     </div>
     <div>
       <div class="footer-col-title">Yachts</div>
@@ -265,7 +265,7 @@ footer{background:var(--near-black);border-top:1px solid rgba(246,244,241,0.06);
       <ul class="footer-links">
         <li><a href="contact.html">Contact Us</a></li>
         <li><a href="mailto:info@najad.se">info@najad.se</a></li>
-        <li style="margin-top:8px;font-size:11px;color:rgba(246,244,241,0.25);line-height:1.6;">Varvsvaegen 1<br>SE-473 31 Henan<br>Sweden</li>
+        <li style="margin-top:8px;font-size:11px;color:rgba(246,244,241,0.25);line-height:1.6;">Varvsvaegen 1<br>SE-473 31 Henån<br>Sweden</li>
       </ul>
     </div>
   </div>
