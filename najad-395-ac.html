@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Najad 395 AC -- Najad Yachts of Sweden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--red:#80242a;--red-deep:#6A1E23;--near-black:#1E1A17;--brown:#4A3728;--stone:#DDD6CC;--stone-light:#EAE4DC;--page:#F6F4F1;--white:#FFFFFF;--warm-mid:#A89E94;--font-body:"Plus Jakarta Sans",sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--page);color:var(--near-black);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:99997;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(246,244,241,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--stone-light);}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}.nav-n{height:30px;width:auto;}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-size:12px;font-weight:400;letter-spacing:0.04em;color:var(--brown);text-decoration:none;transition:color 0.2s;position:relative;}
+.nav-links a::after{content:"";position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--red);transition:width 0.25s;}
+.nav-links a:hover,.nav-links a.active{color:var(--near-black);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-cta{font-size:11px;font-weight:500;letter-spacing:0.08em;color:var(--red);border:1px solid var(--red);padding:9px 22px;text-decoration:none;transition:all 0.2s;}
+.nav-cta:hover{background:var(--red);color:var(--white);}
+.hamburger-btn{display:none;background:none;border:none;padding:8px;cursor:pointer;flex-direction:column;gap:6px;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent;}
+.hamburger-btn span{display:block;width:24px;height:1.5px;background:var(--near-black);border-radius:1px;}
+.mobile-nav{position:fixed;top:0;left:0;width:100vw;height:100vh;background:var(--page);z-index:99999;flex-direction:column;align-items:center;justify-content:center;gap:24px;border-top:3px solid var(--red);}
+.mobile-nav a{font-size:24px;font-weight:300;color:var(--near-black);text-decoration:none;}
+.mobile-nav .mob-cta{font-size:12px;font-weight:500;letter-spacing:0.1em;color:var(--red);border:1px solid var(--red);padding:12px 32px;margin-top:8px;}
+.model-hero{height:90vh;min-height:600px;position:relative;overflow:hidden;background:var(--stone);margin-top:65px;}
+.model-hero-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
+.model-hero-ph span{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--warm-mid);}
+.model-hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(30,26,23,0.75) 0%,transparent 55%);}
+.model-hero-content{position:absolute;bottom:0;left:0;right:0;padding:48px;}
+.model-hero-inner{max-width:1344px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:flex-end;}
+.tag{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.tag::before{content:"";width:20px;height:1px;background:var(--red);flex-shrink:0;}
+.tag-light{color:rgba(246,244,241,0.6);}.tag-light::before{background:rgba(246,244,241,0.4);}
+.model-hero-title{font-size:clamp(40px,5vw,72px);font-weight:300;color:var(--white);line-height:1.0;letter-spacing:-0.01em;margin-bottom:12px;}
+.model-hero-sub{font-size:15px;font-weight:300;color:rgba(246,244,241,0.7);line-height:1.8;max-width:420px;}
+.hero-key-specs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(246,244,241,0.1);}
+.hero-spec{padding:16px 20px;background:rgba(30,26,23,0.6);}
+.hero-spec-val{font-size:28px;font-weight:300;color:var(--white);letter-spacing:-0.01em;line-height:1;}
+.hero-spec-unit{font-size:14px;color:var(--red);}
+.hero-spec-label{font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(246,244,241,0.45);margin-top:4px;}
+.model-intro{padding:80px 48px;border-bottom:1px solid var(--stone-light);}
+.model-intro-inner{max-width:1344px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.model-intro-headline{font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--near-black);line-height:1.1;letter-spacing:-0.01em;margin-bottom:24px;}
+.model-intro-headline em{color:var(--red);font-style:normal;}
+.body-text{font-size:15px;font-weight:300;color:var(--brown);line-height:1.9;}
+.body-text p+p{margin-top:18px;}
+.model-gallery{display:grid;grid-template-columns:2fr 1fr;gap:2px;margin-bottom:2px;}
+.model-gallery-main{aspect-ratio:16/9;background:var(--stone);overflow:hidden;}
+.model-gallery-side{display:grid;gap:2px;}
+.model-gallery-thumb{background:var(--stone);overflow:hidden;}
+.gallery-ph{width:100%;height:100%;min-height:160px;display:flex;align-items:center;justify-content:center;}
+.gallery-ph span{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--warm-mid);}
+.specs-section{padding:80px 48px;background:var(--white);border-top:1px solid var(--stone-light);border-bottom:1px solid var(--stone-light);}
+.specs-inner{max-width:1344px;margin:0 auto;}
+.specs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+.spec-group{padding:32px 36px;border-right:1px solid var(--stone-light);}
+.spec-group:last-child{border-right:none;}
+.spec-group-title{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);margin-bottom:20px;}
+.spec-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--stone-light);}
+.spec-row:last-child{border-bottom:none;}
+.spec-label{font-size:12px;font-weight:300;color:var(--warm-mid);}
+.spec-value{font-size:13px;font-weight:400;color:var(--near-black);}
+.spec-note{font-size:10px;color:var(--warm-mid);font-style:italic;margin-top:4px;}
+.interior-section{padding:80px 48px;background:var(--white);border-top:1px solid var(--stone-light);}
+.interior-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px;}
+.interior-img{aspect-ratio:4/3;background:var(--stone);overflow:hidden;}
+.related-section{padding:80px 48px;border-top:1px solid var(--stone-light);}
+.related-inner{max-width:1344px;margin:0 auto;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-top:32px;}
+.related-card{background:var(--stone);display:block;text-decoration:none;border-top:2px solid transparent;transition:border-color 0.3s;}
+.related-card:hover{border-top-color:var(--red);}
+.related-card-img{aspect-ratio:4/3;background:var(--stone);display:flex;align-items:center;justify-content:center;}
+.related-card-img span{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--warm-mid);}
+.related-card-body{padding:16px 18px;background:var(--white);}
+.related-family{font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin-bottom:4px;}
+.related-name{font-size:18px;font-weight:300;color:var(--near-black);letter-spacing:-0.01em;}
+.cta-section{background:var(--near-black);padding:80px 48px;}
+.cta-inner{max-width:1344px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;}
+.cta-headline{font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--page);line-height:1.1;letter-spacing:-0.01em;}
+.cta-headline em{color:var(--red);font-style:normal;}
+.cta-sub{font-size:14px;font-weight:300;color:var(--warm-mid);line-height:1.8;max-width:400px;margin-top:12px;}
+.btn-inv{font-size:12px;font-weight:500;letter-spacing:0.08em;color:var(--white);background:var(--red);padding:14px 28px;text-decoration:none;transition:all 0.25s;flex-shrink:0;}
+.btn-inv:hover{background:var(--red-deep);}
+footer{background:var(--near-black);border-top:1px solid rgba(246,244,241,0.06);padding:64px 48px 36px;}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;max-width:1344px;margin:0 auto 48px;}
+.footer-brand{font-size:20px;font-weight:300;color:var(--page);letter-spacing:0.02em;margin-bottom:12px;}
+.footer-tagline{font-size:12px;font-weight:300;color:rgba(246,244,241,0.4);line-height:1.7;}
+.footer-col-title{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-links a{font-size:12px;font-weight:300;color:rgba(246,244,241,0.45);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--page);}
+.footer-bottom{max-width:1344px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(246,244,241,0.08);display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:10px;color:rgba(246,244,241,0.2);}
+.footer-arr{max-width:90px;opacity:0.3;}.footer-arr img{width:100%;height:auto;}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}
+@media(max-width:768px){
+  nav{padding:14px 20px!important;}.nav-links,.nav-cta{display:none!important;}.hamburger-btn{display:flex!important;}
+  .model-hero{height:60vh!important;}.model-hero-inner{grid-template-columns:1fr!important;gap:20px!important;}
+  .model-hero-content{padding:24px 20px!important;}
+  .model-intro{padding:48px 20px!important;}.model-intro-inner{grid-template-columns:1fr!important;gap:32px!important;}
+  .model-gallery{grid-template-columns:1fr!important;}
+  .specs-section{padding:48px 20px!important;}.specs-grid{grid-template-columns:1fr!important;}
+  .spec-group{border-right:none!important;border-bottom:1px solid var(--stone-light);padding:24px 0!important;}
+  .interior-section{padding:48px 20px!important;}.interior-grid{grid-template-columns:1fr!important;}
+  .related-section{padding:48px 20px!important;}.related-grid{grid-template-columns:1fr 1fr!important;}
+  .cta-section{padding:60px 20px!important;}.cta-inner{flex-direction:column!important;align-items:flex-start!important;gap:24px!important;}
+  footer{padding:48px 20px 24px!important;}.footer-grid{grid-template-columns:1fr 1fr!important;gap:28px!important;}
+  .footer-bottom{flex-direction:column!important;gap:12px!important;align-items:flex-start!important;}
+}
+</style>
+</head>
+<body>
+<div class="mobile-nav" id="mobileNav" style="display:none;">
+  <a href="yachts.html">Yachts</a><a href="events.html">Events</a><a href="brokerage.html">Brokerage</a>
+  <a href="about.html">About</a><a href="service.html">Service</a>
+  <a href="contact.html" class="mob-cta">Contact</a>
+</div>
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Najad Yachts of Sweden">
+    <img src="assets/najad-n.svg" alt="Najad" class="nav-n">
+  </a>
+  <ul class="nav-links">
+    <li><a href="yachts.html" class="active">Yachts</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="brokerage.html">Brokerage</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="service.html">Service</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Contact</a>
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<section class="model-hero">
+  <div class="model-hero-ph"><span>Image placeholder -- images/395-ac/exterior/</span></div>
+  <div class="model-hero-overlay"></div>
+  <div class="model-hero-content">
+    <div class="model-hero-inner">
+      <div>
+        <div class="tag tag-light">Aft Cockpit</div>
+        <h1 class="model-hero-title">Najad 395 AC</h1>
+        <p class="model-hero-sub">The perfect passage maker. Nimble enough for a couple, capable enough for an ocean.</p>
+      </div>
+      <div class="hero-key-specs">
+        <div class="hero-spec"><div class="hero-spec-val">11.90<span class="hero-spec-unit">m</span></div><div class="hero-spec-label">LOA</div></div>
+        <div class="hero-spec"><div class="hero-spec-val">3.88<span class="hero-spec-unit">m</span></div><div class="hero-spec-label">Beam</div></div>
+        <div class="hero-spec"><div class="hero-spec-val">39<span class="hero-spec-unit">ft</span></div><div class="hero-spec-label">Length</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="model-intro">
+  <div class="model-intro-inner">
+    <div class="reveal">
+      <div class="tag">The 395 AC</div>
+      <h2 class="model-intro-headline">Small in size.<br><em>Grand in ambition.</em></h2>
+    </div>
+    <div class="reveal d1">
+      <div class="body-text"><p>The Najad 395 AC is the entry point into the Najad range -- but there is nothing entry-level about it. At 39 feet, she is large enough to cross oceans in comfort and small enough to be handled by two people without drama.</p><p>The aft cockpit layout keeps the helmsman connected to the boat. Responsive, direct and a genuine pleasure to sail, the 395 AC rewards good seamanship and forgives the occasional lapse.</p></div>
+    </div>
+  </div>
+</section>
+<div class="model-gallery reveal">
+  <div class="model-gallery-main"><div class="gallery-ph"><span>Exterior -- images/395-ac/exterior/</span></div></div>
+  <div class="model-gallery-side">
+    <div class="model-gallery-thumb"><div class="gallery-ph"><span>Detail</span></div></div>
+    <div class="model-gallery-thumb"><div class="gallery-ph"><span>Interior</span></div></div>
+  </div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;" class="reveal">
+  <div style="background:var(--stone);aspect-ratio:4/3;"><div class="gallery-ph"><span>Sailing</span></div></div>
+  <div style="background:var(--stone);aspect-ratio:4/3;"><div class="gallery-ph"><span>Cockpit</span></div></div>
+  <div style="background:var(--stone);aspect-ratio:4/3;"><div class="gallery-ph"><span>Bow</span></div></div>
+</div>
+<section class="specs-section">
+  <div class="specs-inner">
+    <div class="reveal">
+      <div class="tag">Specifications</div>
+      <h2 style="font-size:clamp(24px,2.5vw,36px);font-weight:300;color:var(--near-black);letter-spacing:-0.01em;margin-bottom:8px;">Najad 395 AC</h2>
+      <p style="font-size:13px;font-weight:300;color:var(--warm-mid);margin-bottom:32px;">All specifications are approximate and subject to change. Contact us for current build specifications.</p>
+    </div>
+    <div class="specs-grid reveal d1">
+      <div class="spec-group">
+        <div class="spec-group-title">Dimensions</div>
+        <div class="spec-row"><span class="spec-label">LOA</span><span class="spec-value">11.90 m</span></div>
+        <div class="spec-row"><span class="spec-label">LWL</span><span class="spec-value">-- m</span></div>
+        <div class="spec-row"><span class="spec-label">Beam</span><span class="spec-value">3.88 m</span></div>
+        <div class="spec-row"><span class="spec-label">Draft</span><span class="spec-value">-- m</span></div>
+        <div class="spec-row"><span class="spec-label">Displacement</span><span class="spec-value">-- kg</span></div>
+        <div class="spec-row"><span class="spec-label">Ballast</span><span class="spec-value">-- kg</span></div>
+      </div>
+      <div class="spec-group">
+        <div class="spec-group-title">Rig & Sail</div>
+        <div class="spec-row"><span class="spec-label">Rig type</span><span class="spec-value">Sloop</span></div>
+        <div class="spec-row"><span class="spec-label">I</span><span class="spec-value">-- m</span></div>
+        <div class="spec-row"><span class="spec-label">J</span><span class="spec-value">-- m</span></div>
+        <div class="spec-row"><span class="spec-label">P</span><span class="spec-value">-- m</span></div>
+        <div class="spec-row"><span class="spec-label">E</span><span class="spec-value">-- m</span></div>
+        <div class="spec-row"><span class="spec-label">Sail area upwind</span><span class="spec-value">-- m2</span></div>
+      </div>
+      <div class="spec-group">
+        <div class="spec-group-title">Capacities</div>
+        <div class="spec-row"><span class="spec-label">Fuel</span><span class="spec-value">-- litres</span></div>
+        <div class="spec-row"><span class="spec-label">Water</span><span class="spec-value">-- litres</span></div>
+        <div class="spec-row"><span class="spec-label">Engine</span><span class="spec-value">Volvo Penta</span></div>
+        <div class="spec-row"><span class="spec-label">Engine power</span><span class="spec-value">-- hp</span></div>
+        <div class="spec-row"><span class="spec-label">Cabins</span><span class="spec-value">--</span></div>
+        <div class="spec-row"><span class="spec-label">Berths</span><span class="spec-value">--</span></div>
+      </div>
+    </div>
+    <p class="spec-note reveal" style="margin-top:16px;">Specifications marked -- will be updated when the Najad website is restored.</p>
+  </div>
+</section>
+<section class="interior-section">
+  <div style="max-width:1344px;margin:0 auto;">
+    <div class="reveal">
+      <div class="tag">Below Decks</div>
+      <h2 style="font-size:clamp(24px,2.5vw,36px);font-weight:300;color:var(--near-black);letter-spacing:-0.01em;margin-bottom:8px;">A home on the water.</h2>
+      <p style="font-size:14px;font-weight:300;color:var(--brown);line-height:1.8;max-width:560px;">The 395 AC interior is available in Khaya Mahogany or Light Oak. Every surface is hand-varnished in Henan to a satin finish.</p>
+    </div>
+    <div class="interior-grid reveal d1">
+      <div class="interior-img"><div class="gallery-ph"><span>Interior -- images/395-ac/interior/</span></div></div>
+      <div class="interior-img"><div class="gallery-ph"><span>Saloon</span></div></div>
+      <div class="interior-img"><div class="gallery-ph"><span>Galley</span></div></div>
+      <div class="interior-img"><div class="gallery-ph"><span>Cabin</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="related-section">
+  <div class="related-inner">
+    <div class="reveal">
+      <div class="tag">Also Consider</div>
+      <h2 style="font-size:clamp(22px,2.2vw,32px);font-weight:300;color:var(--near-black);letter-spacing:-0.01em;">Other models in the range</h2>
+    </div>
+    <div class="related-grid reveal d1">
+      <a href="najad-451-ac.html" class="related-card">
+        <div class="related-card-img"><span>Image</span></div>
+        <div class="related-card-body">
+          <div class="related-family">Aft Cockpit</div>
+          <div class="related-name">Najad 451 AC</div>
+        </div>
+      </a>
+      <a href="najad-410-cc.html" class="related-card">
+        <div class="related-card-img"><span>Image</span></div>
+        <div class="related-card-body">
+          <div class="related-family">Centre Cockpit</div>
+          <div class="related-name">Najad 410 CC</div>
+        </div>
+      </a>
+      <a href="najad-451-cc.html" class="related-card">
+        <div class="related-card-img"><span>Image</span></div>
+        <div class="related-card-body">
+          <div class="related-family">Centre Cockpit</div>
+          <div class="related-name">Najad 451 CC</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="reveal">
+      <h2 class="cta-headline">Interested in the<br><em>Najad 395 AC?</em></h2>
+      <p class="cta-sub">Every 395 AC is built to your specification. Talk to us about options, availability and delivery timeline.</p>
+    </div>
+    <a href="contact.html" class="btn-inv reveal d1">Get in Touch</a>
+  </div>
+</section>
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Najad</div>
+      <p class="footer-tagline">Yachts of Sweden. Built in Henan, Orust since 1971. Part of Najad Group.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Aft Cockpit</div>
+      <ul class="footer-links">
+        <li><a href="najad-395-ac.html">Najad 395 AC</a></li>
+        <li><a href="najad-451-ac.html">Najad 451 AC</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Centre Cockpit</div>
+      <ul class="footer-links">
+        <li><a href="najad-410-cc.html">Najad 410 CC</a></li>
+        <li><a href="najad-451-cc.html">Najad 451 CC</a></li>
+        <li><a href="najad-505-cc.html">Najad 505 CC</a></li>
+        <li><a href="najad-570-cc.html">Najad 570 CC</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="mailto:info@najad.se">info@najad.se</a></li>
+        <li style="margin-top:8px;font-size:11px;color:rgba(246,244,241,0.25);line-height:1.6;">Varvsvaegen 1<br>SE-473 31 Henan<br>Sweden</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">2026 Najad AB -- Part of Najad Group</span>
+    <div class="footer-arr"><img src="assets/najad-arrow.svg" alt=""></div>
+  </div>
+</footer>
+<script>
+const reveals=document.querySelectorAll(".reveal");
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible");});},{threshold:0.1});
+reveals.forEach(el=>observer.observe(el));
+var mBtn=document.getElementById("hamburgerBtn");
+var mNav=document.getElementById("mobileNav");
+var mOpen=false;
+function mOpenMenu(){mOpen=true;mNav.style.display="flex";document.body.style.overflow="hidden";}
+function mCloseMenu(){mOpen=false;mNav.style.display="none";document.body.style.overflow="";}
+if(mBtn&&mNav){
+  mBtn.addEventListener("click",function(){mOpen?mCloseMenu():mOpenMenu();});
+  mNav.querySelectorAll("a").forEach(function(a){a.addEventListener("click",mCloseMenu);});
+}
+</script>
+</body>
+</html>
