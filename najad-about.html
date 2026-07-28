@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Najad -- Najad Yachts of Sweden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--red:#80242a;--red-deep:#6A1E23;--near-black:#1E1A17;--brown:#4A3728;--stone:#DDD6CC;--stone-light:#EAE4DC;--page:#F6F4F1;--white:#FFFFFF;--warm-mid:#A89E94;--font-body:"Plus Jakarta Sans",sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--page);color:var(--near-black);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:99997;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(246,244,241,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--stone-light);}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}.nav-n{height:30px;width:auto;}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-size:12px;font-weight:400;letter-spacing:0.04em;color:var(--brown);text-decoration:none;transition:color 0.2s;position:relative;}
+.nav-links a::after{content:"";position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--red);transition:width 0.25s;}
+.nav-links a:hover,.nav-links a.active{color:var(--near-black);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-cta{font-size:11px;font-weight:500;letter-spacing:0.08em;color:var(--red);border:1px solid var(--red);padding:9px 22px;text-decoration:none;transition:all 0.2s;}
+.nav-cta:hover{background:var(--red);color:var(--white);}
+.hamburger-btn{display:none;background:none;border:none;padding:8px;cursor:pointer;flex-direction:column;gap:6px;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent;}
+.hamburger-btn span{display:block;width:24px;height:1.5px;background:var(--near-black);border-radius:1px;}
+.mobile-nav{position:fixed;top:0;left:0;width:100vw;height:100vh;background:var(--page);z-index:99999;flex-direction:column;align-items:center;justify-content:center;gap:24px;border-top:3px solid var(--red);}
+.mobile-nav a{font-size:24px;font-weight:300;color:var(--near-black);text-decoration:none;}
+.mobile-nav .mob-cta{font-size:12px;font-weight:500;letter-spacing:0.1em;color:var(--red);border:1px solid var(--red);padding:12px 32px;margin-top:8px;}
+.tag{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.tag::before{content:"";width:20px;height:1px;background:var(--red);flex-shrink:0;}
+.page-header{padding:140px 48px 72px;border-bottom:1px solid var(--stone-light);}
+.page-header-inner{max-width:1344px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:flex-end;}
+.page-title{font-size:clamp(36px,4.5vw,64px);font-weight:300;color:var(--near-black);line-height:1.05;letter-spacing:-0.01em;}
+.page-intro{font-size:15px;font-weight:300;color:var(--brown);line-height:1.9;}
+.section{padding:80px 48px;max-width:1344px;margin:0 auto;}
+.section-full{padding:80px 48px;border-top:1px solid var(--stone-light);}
+.section-full-inner{max-width:1344px;margin:0 auto;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;}
+.section-headline{font-size:clamp(26px,2.8vw,40px);font-weight:300;color:var(--near-black);line-height:1.1;letter-spacing:-0.01em;margin-bottom:16px;}
+.section-headline em{color:var(--red);font-style:normal;}
+.body-text{font-size:15px;font-weight:300;color:var(--brown);line-height:1.9;}
+.body-text p+p{margin-top:18px;}
+.ph{background:var(--stone);display:flex;align-items:center;justify-content:center;}
+.ph span{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--warm-mid);}
+.ph.tall{aspect-ratio:4/5;}.ph.sq{aspect-ratio:1/1;}.ph.wide{aspect-ratio:16/9;}
+.btn-red{font-size:12px;font-weight:500;letter-spacing:0.08em;color:var(--white);background:var(--red);padding:13px 26px;text-decoration:none;transition:all 0.25s;display:inline-block;}
+.btn-red:hover{background:var(--red-deep);}
+.btn-outline{font-size:12px;font-weight:500;letter-spacing:0.08em;color:var(--red);border:1px solid var(--red);padding:12px 24px;text-decoration:none;transition:all 0.2s;display:inline-block;}
+.btn-outline:hover{background:var(--red);color:var(--white);}
+.cta-section{background:var(--near-black);padding:80px 48px;}
+.cta-inner{max-width:1344px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;}
+.cta-headline{font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--page);line-height:1.1;letter-spacing:-0.01em;}
+.cta-headline em{color:var(--red);font-style:normal;}
+.cta-sub{font-size:14px;font-weight:300;color:var(--warm-mid);line-height:1.8;max-width:400px;margin-top:12px;}
+.btn-inv{font-size:12px;font-weight:500;letter-spacing:0.08em;color:var(--white);background:var(--red);padding:14px 28px;text-decoration:none;transition:all 0.25s;flex-shrink:0;}
+.btn-inv:hover{background:var(--red-deep);}
+footer{background:var(--near-black);border-top:1px solid rgba(246,244,241,0.06);padding:64px 48px 36px;}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;max-width:1344px;margin:0 auto 48px;}
+.footer-brand{font-size:20px;font-weight:300;color:var(--page);letter-spacing:0.02em;margin-bottom:12px;}
+.footer-tagline{font-size:12px;font-weight:300;color:rgba(246,244,241,0.4);line-height:1.7;}
+.footer-col-title{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-links a{font-size:12px;font-weight:300;color:rgba(246,244,241,0.45);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--page);}
+.footer-bottom{max-width:1344px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(246,244,241,0.08);display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:10px;color:rgba(246,244,241,0.2);}
+.footer-arr{max-width:90px;opacity:0.3;}.footer-arr img{width:100%;height:auto;}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}
+@media(max-width:768px){
+  nav{padding:14px 20px!important;}.nav-links,.nav-cta{display:none!important;}.hamburger-btn{display:flex!important;}
+  .page-header{padding:100px 20px 48px!important;}.page-header-inner{grid-template-columns:1fr!important;gap:20px!important;}
+  .section{padding:48px 20px!important;}.section-full{padding:48px 20px!important;}
+  .grid2{grid-template-columns:1fr!important;gap:32px!important;}.grid3{grid-template-columns:1fr!important;}
+  .cta-section{padding:60px 20px!important;}.cta-inner{flex-direction:column!important;align-items:flex-start!important;gap:24px!important;}
+  footer{padding:48px 20px 24px!important;}.footer-grid{grid-template-columns:1fr 1fr!important;gap:28px!important;}
+  .footer-bottom{flex-direction:column!important;gap:12px!important;align-items:flex-start!important;}
+}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px;}
+.value-card{background:var(--white);padding:32px;border-top:2px solid var(--red);}
+.value-title{font-size:18px;font-weight:300;color:var(--near-black);margin-bottom:12px;letter-spacing:-0.01em;}
+.value-body{font-size:14px;font-weight:300;color:var(--brown);line-height:1.8;}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:40px;}
+.team-card{background:var(--white);}
+.team-img{aspect-ratio:3/4;background:var(--stone);display:flex;align-items:center;justify-content:center;}
+.team-img span{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--warm-mid);}
+.team-body{padding:16px 18px;}
+.team-name{font-size:16px;font-weight:400;color:var(--near-black);margin-bottom:4px;}
+.team-title{font-size:12px;font-weight:300;color:var(--warm-mid);}
+@media(max-width:768px){.values-grid{grid-template-columns:1fr!important;}.team-grid{grid-template-columns:1fr 1fr!important;}}
+</style>
+</head>
+<body>
+<div class="mobile-nav" id="mobileNav" style="display:none;">
+  <a href="yachts.html">Yachts</a><a href="events.html">Events</a><a href="brokerage.html">Brokerage</a>
+  <a href="about.html" class="active">About</a><a href="service.html">Service</a>
+  <a href="contact.html" class="mob-cta">Contact</a>
+</div>
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Najad Yachts of Sweden">
+    <img src="assets/najad-n.svg" alt="Najad" class="nav-n">
+  </a>
+  <ul class="nav-links">
+    <li><a href="yachts.html">Yachts</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="brokerage.html">Brokerage</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="service.html">Service</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Contact</a>
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<section class="page-header">
+  <div class="page-header-inner">
+    <div class="reveal">
+      <div class="tag">Our Story</div>
+      <h1 class="page-title">Built in Henaan.<br>Sailed everywhere.</h1>
+    </div>
+    <p class="page-intro reveal d1">Najad has been building yachts on the island of Orust since 1971. Over 50 years, one island, one unwavering commitment to quality.</p>
+  </div>
+</section>
+
+<section class="section" style="border-bottom:1px solid var(--stone-light);">
+  <div class="grid2">
+    <div class="reveal">
+      <div class="tag">Since 1971</div>
+      <h2 class="section-headline">A Swedish yard with a<br>singular <em>obsession.</em></h2>
+      <div class="body-text">
+        <p>Najad was founded in 1971 in Henan, on the island of Orust -- the same island that produces more sailing yachts per square kilometre than anywhere else in the world. From the beginning, the goal was simple: to build the finest bluewater cruising yacht in Sweden.</p>
+        <p>More than 50 years later, that goal has not changed. Every Najad is still built by hand in Henan, by craftsmen who take pride in every detail. The joinery, the laminate schedule, the rigging layout -- nothing is left to chance.</p>
+        <p>Najad yachts have circumnavigated the globe, crossed the Atlantic more times than we can count, and found their way into the most demanding harbours in the world. They come back. They always come back.</p>
+      </div>
+    </div>
+    <div class="ph tall reveal d1"><span>Image placeholder</span></div>
+  </div>
+</section>
+
+<div class="section-full" style="background:var(--white);">
+  <div class="section-full-inner">
+    <div class="reveal">
+      <div class="tag">Our Values</div>
+      <h2 class="section-headline">What we stand for.</h2>
+    </div>
+    <div class="values-grid reveal d1">
+      <div class="value-card">
+        <div class="value-title">Passion for Perfection</div>
+        <div class="value-body">Our brand promise. Every decision -- from the curve of the hull to the weight of a cabinet door -- is made in pursuit of the best possible outcome. There are no acceptable compromises.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-title">Built to Last</div>
+        <div class="value-body">A Najad is not a disposable product. We build yachts that are still sailing 30 years after they left the yard -- and still turning heads in harbours around the world. Quality is not a selling point. It is a necessity.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-title">Your Boat</div>
+        <div class="value-body">Every Najad is built to order. We do not maintain a stock of finished yachts waiting for buyers. We build your boat -- to your specification, for the way you sail, for the life you want to live aboard.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section" style="border-top:1px solid var(--stone-light);border-bottom:1px solid var(--stone-light);">
+  <div class="grid2">
+    <div class="ph tall reveal"><span>Image placeholder -- yard/production</span></div>
+    <div class="reveal d1">
+      <div class="tag">The Yard</div>
+      <h2 class="section-headline">Henan, Orust.<br><em>Since 1971.</em></h2>
+      <div class="body-text">
+        <p>Our yard is in Henan, a small town on the island of Orust on the Swedish west coast. Orust is the centre of Swedish boatbuilding -- Hallberg-Rassy, Arcona and OYS are all based here, along with dozens of smaller yards and suppliers.</p>
+        <p>The concentration of expertise on this island is extraordinary. The craftsmen who build your Najad have often spent their entire careers in the industry. The knowledge runs deep.</p>
+        <p>Najad AB is part of Najad Group, alongside Arcona Yachts and Orust Yacht Service. The group shares the yard infrastructure and supplier relationships, which means every boat benefits from the combined expertise of all three brands.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-full" style="background:var(--white);">
+  <div class="section-full-inner">
+    <div class="reveal">
+      <div class="tag">The Team</div>
+      <h2 class="section-headline">The people behind the boats.</h2>
+    </div>
+    <div class="team-grid reveal d1">
+      <div class="team-card">
+        <div class="team-img"><span>Photo</span></div>
+        <div class="team-body"><div class="team-name">Fredrik Malmqvist</div><div class="team-title">Executive Chairman</div></div>
+      </div>
+      <div class="team-card">
+        <div class="team-img"><span>Photo</span></div>
+        <div class="team-body"><div class="team-name">Hasse Rutgersson</div><div class="team-title">Technical Director & Head of Sales</div></div>
+      </div>
+      <div class="team-card">
+        <div class="team-img"><span>Photo</span></div>
+        <div class="team-body"><div class="team-name">Damien Chevalier</div><div class="team-title">Sales & Support</div></div>
+      </div>
+      <div class="team-card">
+        <div class="team-img"><span>Photo</span></div>
+        <div class="team-body"><div class="team-name">Sofia Thornqvist</div><div class="team-title">Finance & Administration</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="reveal">
+      <h2 class="cta-headline">Come and see<br>us in <em>Henan.</em></h2>
+      <p class="cta-sub">We welcome visits to the yard by appointment. Come and see how a Najad is built -- from laminate to launch.</p>
+    </div>
+    <a href="contact.html" class="btn-inv reveal d1">Get in Touch</a>
+  </div>
+</section>
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Najad</div>
+      <p class="footer-tagline">Yachts of Sweden. Built in Henan, Orust since 1971. Part of Najad Group.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Aft Cockpit</div>
+      <ul class="footer-links">
+        <li><a href="najad-395-ac.html">Najad 395 AC</a></li>
+        <li><a href="najad-451-ac.html">Najad 451 AC</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Centre Cockpit</div>
+      <ul class="footer-links">
+        <li><a href="najad-410-cc.html">Najad 410 CC</a></li>
+        <li><a href="najad-451-cc.html">Najad 451 CC</a></li>
+        <li><a href="najad-505-cc.html">Najad 505 CC</a></li>
+        <li><a href="najad-570-cc.html">Najad 570 CC</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="mailto:info@najad.se">info@najad.se</a></li>
+        <li style="margin-top:8px;font-size:11px;color:rgba(246,244,241,0.25);line-height:1.6;">Varvsvaegen 1<br>SE-473 31 Henan<br>Sweden</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">2026 Najad AB -- Part of Najad Group</span>
+    <div class="footer-arr"><img src="assets/najad-arrow.svg" alt=""></div>
+  </div>
+</footer>
+<script>
+const reveals=document.querySelectorAll(".reveal");
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible");});},{threshold:0.1});
+reveals.forEach(el=>observer.observe(el));
+var mBtn=document.getElementById("hamburgerBtn");
+var mNav=document.getElementById("mobileNav");
+var mOpen=false;
+function mOpenMenu(){mOpen=true;mNav.style.display="flex";document.body.style.overflow="hidden";}
+function mCloseMenu(){mOpen=false;mNav.style.display="none";document.body.style.overflow="";}
+if(mBtn&&mNav){
+  mBtn.addEventListener("click",function(){mOpen?mCloseMenu():mOpenMenu();});
+  mNav.querySelectorAll("a").forEach(function(a){a.addEventListener("click",mCloseMenu);});
+}
+</script>
+</body>
+</html>
