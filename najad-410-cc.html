@@ -32,21 +32,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:99997;display:flex;align-items:c
 .model-hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(30,26,23,0.75) 0%,transparent 55%);}
 .model-hero-content{position:absolute;bottom:0;left:0;right:0;padding:48px;}
 .model-hero-inner{max-width:1344px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:flex-end;}
-.tag{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.tag{font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
 .tag::before{content:"";width:20px;height:1px;background:var(--red);flex-shrink:0;}
 .tag-light{color:rgba(246,244,241,0.6);}.tag-light::before{background:rgba(246,244,241,0.4);}
 .model-hero-title{font-size:clamp(40px,5vw,72px);font-weight:300;color:var(--white);line-height:1.0;letter-spacing:-0.01em;margin-bottom:12px;}
-.model-hero-sub{font-size:15px;font-weight:300;color:rgba(246,244,241,0.7);line-height:1.8;max-width:420px;}
+.model-hero-sub{font-size:16px;font-weight:300;color:rgba(246,244,241,0.7);line-height:1.8;max-width:420px;}
 .hero-key-specs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(246,244,241,0.1);}
 .hero-spec{padding:16px 20px;background:rgba(30,26,23,0.6);}
 .hero-spec-val{font-size:28px;font-weight:300;color:var(--white);letter-spacing:-0.01em;line-height:1;}
 .hero-spec-unit{font-size:14px;color:var(--red);}
-.hero-spec-label{font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(246,244,241,0.45);margin-top:4px;}
+.hero-spec-label{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(246,244,241,0.45);margin-top:4px;}
 .model-intro{padding:80px 48px;border-bottom:1px solid var(--stone-light);}
 .model-intro-inner{max-width:1344px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.model-intro-headline{font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--near-black);line-height:1.1;letter-spacing:-0.01em;margin-bottom:24px;}
+.model-intro-headline{font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--near-black);line-height:1.1;letter-spacing:0.03em;margin-bottom:24px;}
 .model-intro-headline em{color:var(--red);font-style:normal;}
-.body-text{font-size:15px;font-weight:300;color:var(--brown);line-height:1.9;}
+.body-text{font-size:16px;font-weight:300;color:var(--brown);line-height:1.9;}
 .body-text p+p{margin-top:18px;}
 .model-gallery{display:grid;grid-template-columns:2fr 1fr;gap:2px;margin-bottom:2px;}
 .model-gallery-main{aspect-ratio:16/9;background:var(--stone);overflow:hidden;}
@@ -59,11 +59,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:99997;display:flex;align-items:c
 .specs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
 .spec-group{padding:32px 36px;border-right:1px solid var(--stone-light);}
 .spec-group:last-child{border-right:none;}
-.spec-group-title{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);margin-bottom:20px;}
+.spec-group-title{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:20px;}
 .spec-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--stone-light);}
 .spec-row:last-child{border-bottom:none;}
-.spec-label{font-size:12px;font-weight:300;color:var(--warm-mid);}
-.spec-value{font-size:13px;font-weight:400;color:var(--near-black);}
+.spec-label{font-size:13px;font-weight:300;color:var(--warm-mid);}
+.spec-value{font-size:14px;font-weight:400;color:var(--near-black);}
 .spec-note{font-size:10px;color:var(--warm-mid);font-style:italic;margin-top:4px;}
 .interior-section{padding:80px 48px;background:var(--white);border-top:1px solid var(--stone-light);}
 .interior-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px;}
@@ -82,19 +82,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:99997;display:flex;align-items:c
 .cta-inner{max-width:1344px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;}
 .cta-headline{font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--page);line-height:1.1;letter-spacing:-0.01em;}
 .cta-headline em{color:var(--red);font-style:normal;}
-.cta-sub{font-size:14px;font-weight:300;color:var(--warm-mid);line-height:1.8;max-width:400px;margin-top:12px;}
+.cta-sub{font-size:15px;font-weight:300;color:var(--warm-mid);line-height:1.8;max-width:400px;margin-top:12px;}
 .btn-inv{font-size:12px;font-weight:500;letter-spacing:0.08em;color:var(--white);background:var(--red);padding:14px 28px;text-decoration:none;transition:all 0.25s;flex-shrink:0;}
 .btn-inv:hover{background:var(--red-deep);}
 footer{background:var(--near-black);border-top:1px solid rgba(246,244,241,0.06);padding:64px 48px 36px;}
 .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;max-width:1344px;margin:0 auto 48px;}
-.footer-brand{font-size:20px;font-weight:300;color:var(--page);letter-spacing:0.02em;margin-bottom:12px;}
-.footer-tagline{font-size:12px;font-weight:300;color:rgba(246,244,241,0.4);line-height:1.7;}
-.footer-col-title{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
+.footer-brand{font-size:22px;font-weight:300;color:var(--white);letter-spacing:0.04em;margin-bottom:12px;}
+.footer-tagline{font-size:13px;font-weight:300;color:rgba(246,244,241,0.6);line-height:1.7;}
+.footer-col-title{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--stone-light);margin-bottom:18px;}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
-.footer-links a{font-size:12px;font-weight:300;color:rgba(246,244,241,0.45);text-decoration:none;transition:color 0.2s;}
+.footer-links a{font-size:13px;font-weight:300;color:rgba(246,244,241,0.7);text-decoration:none;transition:color 0.2s;}
 .footer-links a:hover{color:var(--page);}
 .footer-bottom{max-width:1344px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(246,244,241,0.08);display:flex;justify-content:space-between;align-items:center;}
-.footer-copy{font-size:10px;color:rgba(246,244,241,0.2);}
+.footer-copy{font-size:11px;color:rgba(246,244,241,0.4);}
 .footer-arr{max-width:90px;opacity:0.3;}.footer-arr img{width:100%;height:auto;}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
@@ -183,47 +183,49 @@ footer{background:var(--near-black);border-top:1px solid rgba(246,244,241,0.06);
   <div class="specs-inner">
     <div class="reveal">
       <div class="tag">Specifications</div>
-      <h2 style="font-size:clamp(24px,2.5vw,36px);font-weight:300;color:var(--near-black);letter-spacing:-0.01em;margin-bottom:8px;">Najad 410 CC</h2>
+      <h2 style="font-size:clamp(24px,2.5vw,36px);font-weight:300;color:var(--near-black);letter-spacing:0.03em;margin-bottom:8px;">Najad 410 CC</h2>
       <p style="font-size:13px;font-weight:300;color:var(--warm-mid);margin-bottom:32px;">All specifications are approximate and subject to change. Contact us for current build specifications.</p>
     </div>
     <div class="specs-grid reveal d1">
       <div class="spec-group">
         <div class="spec-group-title">Dimensions</div>
-        <div class="spec-row"><span class="spec-label">LOA</span><span class="spec-value">12.50 m</span></div>
-        <div class="spec-row"><span class="spec-label">LWL</span><span class="spec-value">-- m</span></div>
-        <div class="spec-row"><span class="spec-label">Beam</span><span class="spec-value">4.00 m</span></div>
-        <div class="spec-row"><span class="spec-label">Draft</span><span class="spec-value">-- m</span></div>
-        <div class="spec-row"><span class="spec-label">Displacement</span><span class="spec-value">-- kg</span></div>
-        <div class="spec-row"><span class="spec-label">Ballast</span><span class="spec-value">-- kg</span></div>
+        <div class="spec-row"><span class="spec-label">Design</span><span class="spec-value">Judel Vrolijk</span></div>
+        <div class="spec-row"><span class="spec-label">LOA</span><span class="spec-value">12.20 m / 40 ft 0 in</span></div>
+        <div class="spec-row"><span class="spec-label">LWL</span><span class="spec-value">10.78 m</span></div>
+        <div class="spec-row"><span class="spec-label">Beam</span><span class="spec-value">3.85 m / 12 ft 8 in</span></div>
+        <div class="spec-row"><span class="spec-label">Draft</span><span class="spec-value">2.10 m (alt. 1.90 m shallow draught)</span></div>
+        <div class="spec-row"><span class="spec-label">Displacement</span><span class="spec-value">12,200 kg</span></div>
+        <div class="spec-row"><span class="spec-label">Ballast</span><span class="spec-value">4,000 kg</span></div>
+        <div class="spec-row"><span class="spec-label">Mast height</span><span class="spec-value">18.5 m above waterline</span></div>
       </div>
       <div class="spec-group">
         <div class="spec-group-title">Rig & Sail</div>
         <div class="spec-row"><span class="spec-label">Rig type</span><span class="spec-value">Sloop</span></div>
-        <div class="spec-row"><span class="spec-label">I</span><span class="spec-value">-- m</span></div>
-        <div class="spec-row"><span class="spec-label">J</span><span class="spec-value">-- m</span></div>
-        <div class="spec-row"><span class="spec-label">P</span><span class="spec-value">-- m</span></div>
-        <div class="spec-row"><span class="spec-label">E</span><span class="spec-value">-- m</span></div>
-        <div class="spec-row"><span class="spec-label">Sail area upwind</span><span class="spec-value">-- m2</span></div>
+        <div class="spec-row"><span class="spec-label">Cruising (main + jib)</span><span class="spec-value">85 m²</span></div>
+        <div class="spec-row"><span class="spec-label">Code 0</span><span class="spec-value">—</span></div>
+        <div class="spec-row"><span class="spec-label">Spinnaker</span><span class="spec-value">134 m²</span></div>
+        <div class="spec-row"><span class="spec-label">Gennaker</span><span class="spec-value">114 m²</span></div>
+        <div class="spec-row"><span class="spec-label">CE category</span><span class="spec-value">A — Unlimited ocean voyages</span></div>
       </div>
       <div class="spec-group">
         <div class="spec-group-title">Capacities</div>
-        <div class="spec-row"><span class="spec-label">Fuel</span><span class="spec-value">-- litres</span></div>
-        <div class="spec-row"><span class="spec-label">Water</span><span class="spec-value">-- litres</span></div>
-        <div class="spec-row"><span class="spec-label">Engine</span><span class="spec-value">Volvo Penta</span></div>
-        <div class="spec-row"><span class="spec-label">Engine power</span><span class="spec-value">-- hp</span></div>
-        <div class="spec-row"><span class="spec-label">Cabins</span><span class="spec-value">--</span></div>
-        <div class="spec-row"><span class="spec-label">Berths</span><span class="spec-value">--</span></div>
+        <div class="spec-row"><span class="spec-label">Engine</span><span class="spec-value">Volvo Penta D2-55D — 55 hp / 41 kW</span></div>
+        <div class="spec-row"><span class="spec-label">Fuel</span><span class="spec-value">230 litres</span></div>
+        <div class="spec-row"><span class="spec-label">Water</span><span class="spec-value">610 litres</span></div>
+        <div class="spec-row"><span class="spec-label">Holding tank</span><span class="spec-value">60 litres</span></div>
+        <div class="spec-row"><span class="spec-label">Cabins</span><span class="spec-value">2</span></div>
       </div>
+    
     </div>
-    <p class="spec-note reveal" style="margin-top:16px;">Specifications marked -- will be updated when the Najad website is restored.</p>
+    
   </div>
 </section>
 <section class="interior-section">
   <div style="max-width:1344px;margin:0 auto;">
     <div class="reveal">
       <div class="tag">Below Decks</div>
-      <h2 style="font-size:clamp(24px,2.5vw,36px);font-weight:300;color:var(--near-black);letter-spacing:-0.01em;margin-bottom:8px;">A home on the water.</h2>
-      <p style="font-size:14px;font-weight:300;color:var(--brown);line-height:1.8;max-width:560px;">The 410 CC interior is available in Khaya Mahogany or Light Oak. Every surface is hand-varnished in Henan to a satin finish.</p>
+      <h2 style="font-size:clamp(24px,2.5vw,36px);font-weight:300;color:var(--near-black);letter-spacing:0.03em;margin-bottom:8px;">A home on the water.</h2>
+      <p style="font-size:14px;font-weight:300;color:var(--brown);line-height:1.8;max-width:560px;">The 410 CC interior is available in Khaya Mahogany or Light Oak. Every surface is hand-varnished in Henån to a satin finish.</p>
     </div>
     <div class="interior-grid reveal d1">
       <div class="interior-img"><div class="gallery-ph"><span>Interior -- images/410-cc/interior/</span></div></div>
@@ -277,7 +279,7 @@ footer{background:var(--near-black);border-top:1px solid rgba(246,244,241,0.06);
   <div class="footer-grid">
     <div>
       <div class="footer-brand">Najad</div>
-      <p class="footer-tagline">Yachts of Sweden. Built in Henan, Orust since 1971. Part of Najad Group.</p>
+      <p class="footer-tagline">Yachts of Sweden. Built in Henån, Orust since 1971. Part of Najad Group.</p>
     </div>
     <div>
       <div class="footer-col-title">Aft Cockpit</div>
@@ -300,7 +302,7 @@ footer{background:var(--near-black);border-top:1px solid rgba(246,244,241,0.06);
       <ul class="footer-links">
         <li><a href="contact.html">Contact Us</a></li>
         <li><a href="mailto:info@najad.se">info@najad.se</a></li>
-        <li style="margin-top:8px;font-size:11px;color:rgba(246,244,241,0.25);line-height:1.6;">Varvsvaegen 1<br>SE-473 31 Henan<br>Sweden</li>
+        <li style="margin-top:8px;font-size:12px;color:rgba(246,244,241,0.5);line-height:1.6;">Varvsvägen 1<br>SE-473 31 Henån<br>Sweden</li>
       </ul>
     </div>
   </div>
